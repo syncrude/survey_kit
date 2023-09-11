@@ -18,6 +18,7 @@ class PresentingSurveyState extends SurveyState {
   final int currentStepIndex;
   final int stepCount;
   final bool isPreviousStep;
+  final SurveyResult? surveyResult;
 
   const PresentingSurveyState({
     required this.stepCount,
@@ -27,6 +28,7 @@ class PresentingSurveyState extends SurveyState {
     this.result,
     this.currentStepIndex = 0,
     this.isPreviousStep = false,
+    this.surveyResult,
   });
 
   @override
@@ -38,7 +40,8 @@ class PresentingSurveyState extends SurveyState {
       other.questionResults == questionResults &&
       other.result == result &&
       other.currentStepIndex == currentStepIndex &&
-      other.isPreviousStep == isPreviousStep;
+      other.isPreviousStep == isPreviousStep &&
+      other.surveyResult == surveyResult;
   @override
   int get hashCode =>
       stepCount.hashCode ^
@@ -47,20 +50,9 @@ class PresentingSurveyState extends SurveyState {
       questionResults.hashCode ^
       result.hashCode ^
       currentStepIndex.hashCode ^
-      isPreviousStep.hashCode;
+      isPreviousStep.hashCode ^
+      surveyResult.hashCode;
 
   bool get isFirstStep => currentStepIndex == 0;
   double get progress => currentStepIndex / stepCount;
-}
-
-class SurveyResultState extends SurveyState {
-  final SurveyResult result;
-  final Step? currentStep;
-  final StepResult? stepResult;
-
-  const SurveyResultState({
-    required this.result,
-    this.stepResult,
-    required this.currentStep,
-  });
 }

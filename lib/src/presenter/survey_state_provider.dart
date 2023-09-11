@@ -92,19 +92,7 @@ class SurveyStateProvider extends InheritedWidget {
       );
     }
 
-    //If not steps are provided we finish the survey
-    final taskResult = SurveyResult(
-      id: taskNavigator.task.id,
-      startTime: startDate,
-      endTime: DateTime.now(),
-      finishReason: FinishReason.completed,
-      results: const [],
-    );
-
-    return SurveyResultState(
-      result: taskResult,
-      currentStep: null,
-    );
+    throw Exception('No steps provided');
   }
 
   SurveyState _handleNextStep(
@@ -182,10 +170,14 @@ class SurveyStateProvider extends InheritedWidget {
       results: stepResults,
     );
     onResult(taskResult);
-    return SurveyResultState(
-      result: taskResult,
-      stepResult: currentState.result,
+    return PresentingSurveyState(
       currentStep: currentState.currentStep,
+      result: stepResults.last,
+      steps: taskNavigator.task.steps,
+      questionResults: results,
+      currentStepIndex: currentStepIndex(currentState.currentStep),
+      stepCount: countSteps,
+      surveyResult: taskResult,
     );
   }
 
@@ -201,10 +193,14 @@ class SurveyStateProvider extends InheritedWidget {
     );
 
     onResult(taskResult);
-    return SurveyResultState(
-      result: taskResult,
+    return PresentingSurveyState(
       currentStep: currentState.currentStep,
-      stepResult: currentState.result,
+      result: stepResults.last,
+      steps: taskNavigator.task.steps,
+      questionResults: results,
+      currentStepIndex: currentStepIndex(currentState.currentStep),
+      stepCount: countSteps,
+      surveyResult: taskResult,
     );
   }
 
