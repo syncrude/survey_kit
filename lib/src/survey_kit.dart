@@ -170,41 +170,51 @@ class _SurveyPageState extends State<SurveyPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: widget.backgroundColor,
-      appBar: widget.appBar ?? const SurveyAppBar(),
-      body: Navigator(
-        key: widget.navigatorKey,
-        observers: [routeObserver],
-        onGenerateRoute: (settings) {
-          final arg = settings.arguments;
-          var step = widget.step;
-          SurveyState? surveyState;
-          if (arg is SurveyState) {
-            surveyState = settings.arguments! as SurveyState;
+    final currentStepIndex =
+        Provider.of<SurveyStateProvider>(context, listen: false)
+            .state
+            ?.currentStepIndex;
 
-            step = surveyState.currentStep!;
-          }
-          return CupertinoPageRoute<Widget>(
-            settings: settings,
-            builder: (_) {
-              return _SurveyView(
-                key: ValueKey<String>(
-                  step.id,
-                ),
-                id: step.id,
-                decoration: widget.decoration,
-                createView: () => AnswerView(
-                  answer: step.answerFormat,
-                  step: step,
-                  stepResult: surveyState?.questionResults.firstWhereOrNull(
-                    (element) => element.id == step.id,
+    return WillPopScope(
+      onWillPop: currentStepIndex == null && currentStepIndex == 0
+          ? null
+          : () async => false,
+      child: Scaffold(
+        backgroundColor: widget.backgroundColor,
+        appBar: widget.appBar ?? const SurveyAppBar(),
+        body: Navigator(
+          key: widget.navigatorKey,
+          observers: [routeObserver],
+          onGenerateRoute: (settings) {
+            final arg = settings.arguments;
+            var step = widget.step;
+            SurveyState? surveyState;
+            if (arg is SurveyState) {
+              surveyState = settings.arguments! as SurveyState;
+
+              step = surveyState.currentStep!;
+            }
+            return CupertinoPageRoute<Widget>(
+              settings: settings,
+              builder: (_) {
+                return _SurveyView(
+                  key: ValueKey<String>(
+                    step.id,
                   ),
-                ),
-              );
-            },
-          );
-        },
+                  id: step.id,
+                  decoration: widget.decoration,
+                  createView: () => AnswerView(
+                    answer: step.answerFormat,
+                    step: step,
+                    stepResult: surveyState?.questionResults.firstWhereOrNull(
+                      (element) => element.id == step.id,
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }
