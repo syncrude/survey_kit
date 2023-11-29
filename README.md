@@ -328,10 +328,16 @@ You can find the complete example [HERE](https://github.com/quickbirdstudios/sur
 # 👤 Author
 This Flutter library is created with 💙 by [QuickBird Studios](https://quickbirdstudios.com/).
 
+
 # ❤️ Contributing
+Information on how the codebase is setup is contained in [Information on the code base](./documentation/code-base/information-on-code-base.md).
+
+Information on how to contribute to this repo is contained in the [How to contribute to this repository](./documentation/contributions/how-to-contribute.md).
+
+Information on coding standards is contained in [Coding Standards](./documentation/code-base/information-on-code-base.md).
+
 Open an issue if you need help, if you found a bug, or if you want to discuss a feature request.
 
-Open a PR if you want to make changes to SurveyKit.
 
 # 📃 License
 SurveyKit is released under an MIT license. See [License](LICENSE) for more information.
