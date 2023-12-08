@@ -1,6 +1,6 @@
 name: survey_kit
 description: Create beautiful surveys with Flutter (inspired by iOS ResearchKit Surveys)
-version: 1.0.0-dev.1
+version: 1.0.0-dev.2
 homepage: https://quickbirdstudios.com
 repository: https://github.com/quickbirdstudios/survey_kit
 issue_tracker: https://github.com/quickbirdstudios/survey_kit/issues
@@ -15,7 +15,7 @@ flutter:
         pluginClass: SurveyKitPlugin
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=2.0.0"
 
 dependencies:
@@ -25,7 +25,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.13
-  image_picker: ^0.8.5+3
+  image_picker: ^1.0.4
   intl: ^0.18.0
   json_annotation: ^4.0.1
   just_audio: ^0.9.32
@@ -34,7 +34,7 @@ dependencies:
   rxdart: ^0.27.7
   universal_html: ^2.2.1
   url_launcher: ^6.1.10
-  uuid: ^3.0.4
+  uuid: ^4.2.1
   video_player: ^2.6.0
   visibility_detector: ^0.4.0+2
 
