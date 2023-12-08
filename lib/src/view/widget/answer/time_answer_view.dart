@@ -8,6 +8,7 @@ import 'package:survey_kit/src/util/measure_date_state_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a time-based survey question.
 class TimeAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;

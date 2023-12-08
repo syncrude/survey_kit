@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:survey_kit/src/model/content/markdown_content.dart';
 import 'package:survey_kit/src/widget/survey_kit_markdown.dart';
 
+/// This widget is responsible for displaying the markdown content of a survey step.
 class MarkdownWidget extends StatelessWidget {
   const MarkdownWidget({
     super.key,

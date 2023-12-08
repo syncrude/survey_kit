@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide Step;
 import 'package:survey_kit/src/util/extension.dart';
 import 'package:survey_kit/survey_kit.dart';
 
+/// This widget is used to display the content of a [Step].
 class ContentWidget extends StatefulWidget {
   const ContentWidget({
     super.key,
@@ -41,6 +42,7 @@ class _ContentWidgetState extends State<ContentWidget> {
   }
 }
 
+/// This widget is used to display a seperator between two widgets in the content
 class _Separator extends StatelessWidget {
   const _Separator({
     required this.height,

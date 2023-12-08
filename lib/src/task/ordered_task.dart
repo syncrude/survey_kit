@@ -2,10 +2,12 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:survey_kit/src/model/step.dart';
 import 'package:survey_kit/src/task/task.dart';
 
+/// Converts the NavigableTask object to a JSON map.
 part 'ordered_task.g.dart';
 
 /// Defines a [Task] which handles its steps in the order of the [steps] list.
 @JsonSerializable(createFactory: false)
+// Constructor for creating an OrderedTask object.
 class OrderedTask extends Task {
   OrderedTask({
     required String id,
@@ -17,6 +19,7 @@ class OrderedTask extends Task {
           initalStep: initialStep,
         );
 
+  // Factory method to create an OrderedTask object from a JSON map.
   factory OrderedTask.fromJson(Map<String, dynamic> json) => OrderedTask(
         id: json['id'] as String,
         steps: json['steps'] != null
@@ -26,6 +29,7 @@ class OrderedTask extends Task {
             : [],
       );
 
+  // Convert the OrderedTask object to a JSON map.
   @override
   Map<String, dynamic> toJson() => _$OrderedTaskToJson(this);
 }

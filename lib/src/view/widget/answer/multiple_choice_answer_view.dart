@@ -10,6 +10,7 @@ import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 import 'package:survey_kit/src/view/widget/answer/selection_list_tile.dart';
 import 'package:survey_kit/src/view/widget/question_answer.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a multiple choice-based survey question.
 class MultipleChoiceAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;

@@ -9,6 +9,8 @@ import 'package:survey_kit/src/util/measure_date_state_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 import 'package:survey_kit/src/view/widget/answer/selection_list_tile.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a multiple choice-based survey question
+/// with an autocomplete field.
 class MultipleChoiceAutoCompleteAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;

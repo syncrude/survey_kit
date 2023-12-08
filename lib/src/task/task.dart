@@ -36,11 +36,16 @@ abstract class Task {
     }
     throw const TaskNotDefinedException();
   }
-
+  // The `toJson` method converts the Task object to a JSON map.
   Map<String, dynamic> toJson();
 
+  // The `operator ==` method overrides the equality operator for the Task class.
+  // It compares the `id` and `steps` properties of two Task objects.
+  // Two Task objects are considered equal if their `id` and `steps` properties are equal.
   @override
   bool operator ==(Object other) => other is Task && other.id == id;
+  // The `hashCode` getter overrides the default `hashCode` getter for the `Task` class.
+  // It calculates a hash code based on the `id` and `steps` properties of the `Task` object.
   @override
   int get hashCode => id.hashCode ^ steps.hashCode;
 }

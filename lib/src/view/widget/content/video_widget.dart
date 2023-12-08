@@ -6,6 +6,7 @@ import 'package:survey_kit/src/widget/link.dart';
 import 'package:survey_kit/src/widget/survey_kit_video_player.dart';
 import 'package:survey_kit/src/widget/web_video_player.dart';
 
+/// This widget is responsible for displaying the video content of a survey step.
 class VideoWidget extends StatelessWidget {
   const VideoWidget({
     super.key,

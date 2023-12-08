@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:survey_kit/src/model/content/text_content.dart';
 
+/// This widget is responsible for displaying the text content of a survey step.
 class TextWidget extends StatelessWidget {
   const TextWidget({
     super.key,

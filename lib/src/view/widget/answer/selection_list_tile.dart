@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// This is a widget that represents a selection list tile.
 class SelectionListTile extends StatelessWidget {
   final String text;
   final Function() onTap;

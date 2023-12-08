@@ -7,6 +7,7 @@ import 'package:survey_kit/src/view/widget/answer/answer_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 import 'package:survey_kit/src/view/widget/answer/selection_list_tile.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a boolean-based survey question.
 class BooleanAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;
@@ -47,22 +48,29 @@ class _BooleanAnswerViewState extends State<BooleanAnswerView>
     return true;
   }
 
+  // This is the method that is called when the user selects an option.
   @override
   void onChange(BooleanResult? booleanResult) {
+    // If the `booleanResult` is equal to the current `_result`, set `_result` to `null` to deselect the option.
+    // Otherwise, set `_result` to the selected `booleanResult`.
     if (booleanResult == _result) {
       _result = null;
     } else {
       _result = booleanResult;
     }
+    // Trigger a rebuild of the widget by calling `setState`.
     setState(() {});
+    // Call the `onChange` method of the `AnswerMixin` superclass to update the validation status and step result.
     super.onChange(_result);
   }
 
   @override
   Widget build(BuildContext context) {
+    // Get the question text from the answer format.
     final questionText = widget.questionStep.answerFormat?.question;
     return Column(
       children: [
+        // If questionText is not null, display the question text using the `AnswerQuestionText` widget.
         if (questionText != null) AnswerQuestionText(text: questionText),
         const Divider(
           color: Colors.grey,

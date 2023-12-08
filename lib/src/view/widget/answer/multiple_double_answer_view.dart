@@ -8,6 +8,9 @@ import 'package:survey_kit/src/view/widget/answer/answer_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 import 'package:survey_kit/src/view/widget/question_answer.dart';
 
+/// This widget is responsible for displaying and handling the user's input for when multiple selections or
+/// answers that are a number can be provided by the user.
+/// When the answer must be a number, the user can input a number with a decimal point.
 class MultipleDoubleAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;

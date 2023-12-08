@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// This widget displays the provided text as a Text widget.
 class AnswerQuestionText extends StatelessWidget {
   const AnswerQuestionText({
     super.key,
@@ -12,7 +13,7 @@ class AnswerQuestionText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 14),
-      child: Text(text),
+      child: Text(text), // Display the provided text as a Text widget.
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:survey_kit/src/model/content/image_content.dart';
 
+/// This widget is responsible for displaying the image content of a survey step.
 class ImageWidget extends StatelessWidget {
   const ImageWidget({
     super.key,

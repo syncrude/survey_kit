@@ -5,14 +5,14 @@ import 'package:survey_kit/src/model/step.dart';
 
 @immutable
 class SurveyState {
-  final List<Step> steps;
-  final Set<StepResult> questionResults;
-  final Step? currentStep;
-  final StepResult? result;
-  final int currentStepIndex;
-  final int stepCount;
-  final SurveyResult? surveyResult;
-  final bool isLoading;
+  final List<Step> steps; // List of steps in the survey.
+  final Set<StepResult> questionResults; // Set of question results.
+  final Step? currentStep; // Current step in the survey.
+  final StepResult? result; // Result of the current step/question.
+  final int currentStepIndex; // Index of the current step.
+  final int stepCount; // Total number of steps in the survey.
+  final SurveyResult? surveyResult; // Result of the survey.
+  final bool isLoading; // Flag to indicate loading state.
 
   const SurveyState({
     required this.stepCount,
@@ -47,15 +47,18 @@ class SurveyState {
       surveyResult.hashCode ^
       isLoading.hashCode;
 
+  // This method is used to create a new instance of SurveyState with updated properties.
+  //  Each property is checked against the provided value, and if it is null, the existing value is used.
+  // If a non-null value is provided, it is used instead of the existing value.
   SurveyState copyWith({
-    int? stepCount,
-    Step? currentStep,
-    List<Step>? steps,
-    Set<StepResult>? questionResults,
-    StepResult? result,
-    int? currentStepIndex,
-    SurveyResult? surveyResult,
-    bool? isLoading,
+    int? stepCount, // the count of the steps in the survey.
+    Step? currentStep, // the current step in the survey.
+    List<Step>? steps, // the list of steps in the survey.
+    Set<StepResult>? questionResults, // the set of question results.
+    StepResult? result, // the result of the current step/question.
+    int? currentStepIndex, // the index of the current step.
+    SurveyResult? surveyResult, // the result of the survey.
+    bool? isLoading, // the loading state.
   }) =>
       SurveyState(
         stepCount: stepCount ?? this.stepCount,
@@ -68,6 +71,10 @@ class SurveyState {
         isLoading: isLoading ?? this.isLoading,
       );
 
-  bool get isFirstStep => currentStepIndex == 0;
-  double get progress => currentStepIndex / stepCount;
+  bool get isFirstStep =>
+      currentStepIndex ==
+      0; // Check if the current step index is 0, indicating that it is the first step.
+  double get progress =>
+      currentStepIndex /
+      stepCount; // Calculate the progress by dividing the current step index by the total step count.
 }

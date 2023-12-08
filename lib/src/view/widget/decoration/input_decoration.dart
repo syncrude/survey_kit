@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// This function returns an `InputDecoration` object for styling a text field input.
+// It takes an optional `hint` parameter to provide a hint text for the input field.
 InputDecoration textFieldInputDecoration({String hint = ''}) => InputDecoration(
       contentPadding: const EdgeInsets.only(
         left: 10,
@@ -19,5 +21,5 @@ InputDecoration textFieldInputDecoration({String hint = ''}) => InputDecoration(
           color: Colors.black.withOpacity(0.2),
         ),
       ),
-      hintText: hint,
+      hintText: hint, // Set the hint text for the input field.
     );

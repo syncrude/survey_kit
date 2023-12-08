@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:survey_kit/src/model/content/styled_text_content.dart';
 
+/// This widget is responsible for displaying the styled text content of a survey step.
 class StyledTextWidget extends StatelessWidget {
   const StyledTextWidget({
     super.key,

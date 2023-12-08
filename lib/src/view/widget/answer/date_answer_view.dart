@@ -8,6 +8,8 @@ import 'package:survey_kit/src/util/measure_date_state_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a date-based survey question.
+/// It contains a [CalendarDatePicker] for Android and a [CupertinoDatePicker] for iOS.
 class DateAnswerView extends StatefulWidget {
   /// [QuestionStep] which includes the [DateAnswerFormat]
   final Step questionStep;
@@ -57,6 +59,7 @@ class _DateAnswerViewState extends State<DateAnswerView>
   Widget build(BuildContext context) {
     return Column(
       children: [
+        // use the different views depending on the platform
         if (Theme.of(context).platform == TargetPlatform.iOS)
           _iosDatePicker()
         else

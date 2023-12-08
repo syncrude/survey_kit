@@ -8,6 +8,7 @@ import 'package:survey_kit/src/view/widget/answer/answer_mixin.dart';
 import 'package:survey_kit/src/view/widget/answer/answer_question_text.dart';
 import 'package:survey_kit/src/view/widget/answer/selection_list_tile.dart';
 
+/// This widget is responsible for displaying and handling the user's input for a single choice-based survey question.
 class SingleChoiceAnswerView extends StatefulWidget {
   final Step questionStep;
   final StepResult? result;

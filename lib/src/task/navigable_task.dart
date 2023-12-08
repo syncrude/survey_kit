@@ -37,9 +37,11 @@ class NavigableTask extends Task {
     return navigationRules[stepIdentifier];
   }
 
+  /// Factory method to create a NavigableTask object from a JSON map.
   factory NavigableTask.fromJson(Map<String, dynamic> json) {
     final navigationRules = <String, NavigationRule>{};
 
+    // Parse the navigation rules from the JSON map.
     if (json['rules'] != null) {
       final rules = json['rules'] as List;
       for (final rule in rules) {
@@ -51,6 +53,7 @@ class NavigableTask extends Task {
       }
     }
 
+    // Create and return a new NavigableTask object.
     return NavigableTask(
       id: json['id'] as String,
       steps: json['steps'] != null
@@ -64,6 +67,7 @@ class NavigableTask extends Task {
     );
   }
 
+  /// Converts the NavigableTask object to a JSON map.
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
         'id': id,

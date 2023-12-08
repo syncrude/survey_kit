@@ -5,6 +5,7 @@ import 'package:survey_kit/src/widget/link.dart';
 import 'package:survey_kit/src/widget/survey_kit_audio_player.dart';
 import 'package:survey_kit/survey_kit.dart';
 
+/// This widget is responsible for displaying the audio content of a survey step.
 class AudioWidget extends StatelessWidget {
   const AudioWidget({
     super.key,
